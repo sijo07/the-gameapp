@@ -35,12 +35,12 @@ const Header = () => {
             </div>
           ) : null}
         </div>
-        <div className="flex bg-gray-500 p-2 w-full items-center rounded-full lg:mx-20 mx-5 font-bold text-1lg">
+        <div className="flex bg-gray-100 p-2 w-full items-center rounded-full lg:mx-20 mx-5 font-bold text-1lg">
           <FcSearch />
           <input
             type="search"
             placeholder="Search"
-            className="px-1 rounded-full w-full bg-transparent outline-none"
+            className="px-1 rounded-full w-full bg-transparent outline-none text-black"
           />
         </div>
         <div className="cursor-pointer">
