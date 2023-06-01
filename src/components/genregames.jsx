@@ -19,7 +19,7 @@ const GamesByGenresId = ({ gameList, selectedGenresName }) => {
                 src={item.background_image}
                 className="w-full h-[80%] rounded-xl object-cover"
               />
-              <h2 className="text-[18px] p-1 text-white font-bold">
+              <h2 className="text-[18px] p-1 dark:text-white font-bold">
                 {item.name}
                 <span className="p-1 rounded-sm ml-2 text-[10px] bg-gray-200 text-teal-900 font-medium ">
                   {item.metacritic}
