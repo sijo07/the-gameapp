@@ -1,10 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import logo from "../assets/logo.png";
-import { FcSearch,FcNoIdea,FcIdea } from "react-icons/fc";
-import {
-  HiOutlineBars3CenterLeft,
-  HiOutlineXMark,
-} from "react-icons/hi2";
+import { FcSearch, FcNoIdea, FcIdea } from "react-icons/fc";
+import { HiOutlineBars3CenterLeft, HiOutlineXMark } from "react-icons/hi2";
 import { ThemeContext } from "../context/themecontext";
 import GenreList from "./genrelist";
 
@@ -12,7 +9,7 @@ const Header = () => {
   const [toggle, setToggle] = useState(false);
   const { theme, setTheme } = useContext(ThemeContext);
 
-  useEffect(() =>{}, []);
+  useEffect(() => {}, []);
   return (
     <>
       <div className="flex justify-around items-center p-5">
@@ -31,7 +28,7 @@ const Header = () => {
           )}
           {toggle ? (
             <div className="absolute z-10 bg-white mt-3 dark:bg-[#121212]">
-              <GenreList/>
+              <GenreList />
             </div>
           ) : null}
         </div>

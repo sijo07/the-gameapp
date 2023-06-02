@@ -13,18 +13,18 @@ const TrendingGames = ({ gameList }) => {
             index < 3 && (
               <div className="rounded-lg text-center group lg:hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer p-1">
                 <div>
-                <img
-                  className="w-[550px] h-[120px] object-cover rounded-[20px]"
-                  src={item.background_image}
-                  alt="img"
-                />
-                   <h2 className="dark:text-white text-[12px] font-bold text-start text-gray-50 uppercase pt-3 px-5">
+                  <img
+                    className="w-[550px] h-[120px] object-cover rounded-[20px]"
+                    src={item.background_image}
+                    alt="img"
+                  />
+                  <h2 className="dark:text-white text-[12px] font-bold text-start text-gray-50 uppercase pt-3 px-5">
                     {item.name}
                   </h2>
                   <h2 className="dark:text-white text-[10px] font-semibold text-start text-gray-50 pt-1 px-6">
                     {item.playtime} hrs
                   </h2>
-                  </div>
+                </div>
               </div>
             )
         )}

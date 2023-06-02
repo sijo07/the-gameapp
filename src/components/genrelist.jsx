@@ -46,7 +46,6 @@ const GenreList = ({ genreId, selectedGenresName }) => {
             </h3>
           </div>
         ))}
-        
       </div>
     </>
   );

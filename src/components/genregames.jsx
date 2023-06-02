@@ -1,15 +1,13 @@
 import React, { useEffect } from "react";
-import {FcRating} from 'react-icons/fc'
+import { FcRating } from "react-icons/fc";
 
 const GamesByGenresId = ({ gameList, selectedGenresName }) => {
-  useEffect(() => {
-    console.log(gameList);
-  });
+  useEffect(() => {});
   return (
     <>
       <div className="mt-10">
         <h2 className="h-10 font-bold text-[22px] dark:text-white uppercase tracking-wider px-5 lg:px-0">
-          {selectedGenresName} games
+          {selectedGenresName}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
           {gameList.map((item) => (
@@ -31,11 +29,16 @@ const GamesByGenresId = ({ gameList, selectedGenresName }) => {
                 </p>
                 <div className="flex items-center">
                   <p className="text-sm font-semibold my-3 lining-nums">
-                  <date>{item.released}</date>
+                    {item.released}
                   </p>
                   <div className="ml-auto flex cursor-pointer items-center">
-                  <div><FcRating size={15}/></div>&nbsp;
-                  <p className="text-sm font-semibold lining-nums">{item.rating}</p>
+                    <div>
+                      <FcRating size={15} />
+                    </div>
+                    &nbsp;
+                    <p className="text-sm font-semibold lining-nums">
+                      {item.rating}
+                    </p>
                   </div>
                 </div>
               </div>

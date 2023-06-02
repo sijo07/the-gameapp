@@ -4,7 +4,7 @@ import {
   Banner,
   GenreList,
   TrendingGames,
-  GamesByGenresId
+  GamesByGenresId,
 } from "../components";
 
 const Home = () => {
