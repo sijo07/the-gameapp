@@ -15,7 +15,7 @@ const GenreList = ({ genreId, selectedGenresName }) => {
   return (
     <>
       <div className="mt- mr-10">
-        <h2 className="text-[30px] font-bold capitalize dark:text-white pb-5 px-3">
+        <h2 className="text-[30px] font-bold capitalize dark:text-white text-black pb-5 px-3">
           genres
         </h2>
         {genreList.map((item, index) => (
