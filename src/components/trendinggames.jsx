@@ -4,7 +4,7 @@ const TrendingGames = ({ gameList }) => {
   useEffect(() => {}, []);
   return (
     <div className="mt-5 md:block">
-      <h2 className="h-10 font-bold text-[22px] dark:text-white uppercase tracking-wider">
+      <h2 className="h-10 font-bold text-[22px] text-gray-400 uppercase tracking-wider">
         Trending Games
       </h2>
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-3 mt-5 items-center">
