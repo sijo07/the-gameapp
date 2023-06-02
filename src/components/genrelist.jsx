@@ -14,8 +14,8 @@ const GenreList = ({ genreId, selectedGenresName }) => {
   };
   return (
     <>
-      <div className="mt- mr-10">
-        <h2 className="text-[30px] font-bold capitalize dark:text-white text-black pb-5 px-3">
+      <div className="mt- mr-10 bg-black/10">
+        <h2 className="text-[30px] font-bold capitalize text-gray-400 pb-5 px-3">
           genres
         </h2>
         {genreList.map((item, index) => (
@@ -26,7 +26,7 @@ const GenreList = ({ genreId, selectedGenresName }) => {
               selectedGenresName(item.name);
             }}
             className={`flex gap-2 items-center cursor-pointer group  transition-all duration-300 rounded-lg p-3 ${
-              activeIndex == index ? "bg-slate-300 dark:bg-red-700 " : null
+              activeIndex == index ? "dark:bg-red-700 " : null
             }`}
           >
             <img

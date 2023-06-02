@@ -6,7 +6,7 @@ const GamesByGenresId = ({ gameList, selectedGenresName }) => {
   return (
     <>
       <div className="mt-10">
-        <h2 className="h-10 font-bold text-[22px] dark:text-white text-black uppercase tracking-wider px-5 lg:px-0">
+        <h2 className="h-10 font-bold text-[22px] text-gray-400 uppercase tracking-wider px-5 lg:px-0">
           {selectedGenresName}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
