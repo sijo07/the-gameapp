@@ -5,7 +5,7 @@ const Banner = ({ gameBanner }) => {
   return (
     <>
       <div className="relative py-10">
-        <div className="absolute bottom-0  bg-gradient-to-t w-full pb-8 from-indigo-950 to-transparent p-5 rounded-xl">
+        <div className="absolute bottom-10  bg-gradient-to-t w-full pb-8 from-black/100 to-trasparent p-5 rounded-xl">
           <h2 className="text-[24px] text-white font-bold">{gameBanner.name}</h2>
           <button className="bg-red-600 text-white px-2 p-1">Get Now</button>
         </div>

@@ -37,8 +37,8 @@ const Home = () => {
         <div className="col-span-4 md:col-span-3">
           {allGameList?.length > 0 && gameListByGenres.length > 0 ? (
             <div>
-              <TrendingGames gameList={allGameList} />
               <Banner gameBanner={gameListByGenres[0]} />
+              <TrendingGames gameList={allGameList} />
               <GamesByGenresId
                 gameList={gameListByGenres}
                 selectedGenresName={selectedGenresName}

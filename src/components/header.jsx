@@ -15,7 +15,7 @@ const Header = () => {
   useEffect(() =>{}, []);
   return (
     <>
-      <div className="flex items-center p-3">
+      <div className="flex justify-around items-center p-5">
         <img src={logo} width={60} height={60} className="hidden md:block" />
         <div className="md:hidden">
           {!toggle ? (
@@ -35,7 +35,7 @@ const Header = () => {
             </div>
           ) : null}
         </div>
-        <div className="flex bg-gray-100 p-2 w-full items-center rounded-full lg:mx-20 mx-5 font-bold text-1lg">
+        <div className="flex bg-gray-100 p-2 w-96 items-center rounded-full lg:mx-20 mx-5 font-bold text-1lg">
           <FcSearch />
           <input
             type="search"
