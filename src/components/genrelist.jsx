@@ -22,25 +22,27 @@ const GenreList = ({ genreId, selectedGenresName }) => {
           <div
             onClick={() => {
               setActiveIndex(index);
-              genreId(item.id);
-              selectedGenresName(item.name);
+              if (genreId) genreId(item.id);
+              if (selectedGenresName) selectedGenresName(item.name);
             }}
-            className={`flex gap-2 items-center cursor-pointer group  transition-all duration-300 rounded-lg p-3 ${
-              activeIndex == index ? "dark:bg-red-700 " : null
-            }`}
+            className={`flex gap-3 items-center cursor-pointer group transition-all duration-300 rounded-xl p-3 mb-3 
+            ${activeIndex == index
+                ? "bg-gradient-to-r from-red-600 to-orange-600 shadow-lg scale-105"
+                : "hover:bg-gray-200 dark:hover:bg-gray-800"
+              }`}
           >
             <img
               src={item.image_background}
-              className={`w-[40px] h-[40px] 
-              object-cover rounded-lg group-hover:scale-110  
-              transition-all duration-300 ${
-                activeIndex == index ? "scale-110" : null
-              } `}
+              className={`w-[50px] h-[50px] object-cover rounded-lg group-hover:scale-105 transition-all duration-300 shadow-sm
+              ${activeIndex == index ? "scale-105 ring-2 ring-white" : null
+                }`}
             />
             <h3
-              className={`dark:text-white text-[18px] group-hover:font-bold transition-all ease-out duration-300 ${
-                activeIndex == index ? "font-bold" : null
-              }`}
+              className={`text-[19px] transition-all ease-out duration-300 
+              ${activeIndex == index
+                  ? "text-white font-bold"
+                  : "text-black dark:text-white group-hover:font-semibold"
+                }`}
             >
               {item.name}
             </h3>

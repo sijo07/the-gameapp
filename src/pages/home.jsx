@@ -2,19 +2,29 @@ import React, { useEffect, useState } from "react";
 import GlobalApi from "../services/GlobalApi";
 import {
   Banner,
-  GenreList,
   TrendingGames,
   GamesByGenresId,
 } from "../components";
 
-const Home = () => {
+const Home = ({ selectedGenreId, selectedGenreName, searchQuery }) => {
   const [allGameList, setAllGameList] = useState();
   const [gameListByGenres, setGameListByGenres] = useState([]);
-  const [selectedGenresName, setSelectedGenresName] = useState("Action");
+
   useEffect(() => {
     getAllGamesList();
-    getGameListByGenresId(4);
-  }, []);
+    if (searchQuery && searchQuery.length > 0) {
+      getGameListBySearch(searchQuery);
+    } else if (selectedGenreId) {
+      getGameListByGenresId(selectedGenreId);
+    }
+  }, [selectedGenreId, searchQuery]);
+
+  const getGameListBySearch = (query) => {
+    GlobalApi.getGameListBySearch(query).then((resp) => {
+      setGameListByGenres(resp.data.results);
+    });
+  };
+
   const getAllGamesList = () => {
     GlobalApi.getAllGames.then((resp) => {
       setAllGameList(resp.data.results);
@@ -27,26 +37,16 @@ const Home = () => {
   };
   return (
     <>
-      <div className="grid grid-cols-4 p-8">
-        <div className="hidden md:block">
-          <GenreList
-            genreId={(genreId) => getGameListByGenresId(genreId)}
-            selectedGenresName={(name) => setSelectedGenresName(name)}
+      {allGameList?.length > 0 && gameListByGenres.length > 0 ? (
+        <div>
+          <Banner gameBanner={gameListByGenres[0]} />
+          <TrendingGames gameList={allGameList} />
+          <GamesByGenresId
+            gameList={gameListByGenres}
+            selectedGenresName={selectedGenreName}
           />
         </div>
-        <div className="col-span-4 md:col-span-3">
-          {allGameList?.length > 0 && gameListByGenres.length > 0 ? (
-            <div>
-              <Banner gameBanner={gameListByGenres[0]} />
-              <TrendingGames gameList={allGameList} />
-              <GamesByGenresId
-                gameList={gameListByGenres}
-                selectedGenresName={selectedGenresName}
-              />
-            </div>
-          ) : null}
-        </div>
-      </div>
+      ) : null}
     </>
   );
 };

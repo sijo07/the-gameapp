@@ -1,19 +1,21 @@
 import React, { useEffect } from "react";
 import { FcRating } from "react-icons/fc";
+import { useNavigate } from "react-router-dom";
 
 const GamesByGenresId = ({ gameList, selectedGenresName }) => {
-  useEffect(() => {});
+  const navigate = useNavigate();
+  useEffect(() => { });
   return (
     <>
       <div className="mt-10">
-        <h2 className="h-10 font-bold text-[22px] text-gray-400 uppercase tracking-wider px-5 lg:px-0">
+        <h2 className="h-10 font-bold text-[22px] text-black dark:text-gray-400 uppercase tracking-wider px-5 lg:px-0">
           {selectedGenresName}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
           {gameList.map((item) => (
             <div
               className="hover:scale-105 transition-all duration-500 cursor-pointe bg-black/20 rounded-lg"
-              onClick={() => getGameDetails(item.id)}
+              onClick={() => navigate("/game/" + item.id)}
               key={item.id}
             >
               <div className="lg:w-72 h-44">
@@ -23,12 +25,14 @@ const GamesByGenresId = ({ gameList, selectedGenresName }) => {
                 />
               </div>
               <div className="px-4 py-3">
-                <h2 className="font-bold uppercase text-xs">{item.name}</h2>
-                <p className="w-60  font-bold block truncate text-gray-400 uppercase text-xs">
+                <h2 className="font-bold uppercase text-xs text-black dark:text-white">
+                  {item.name}
+                </h2>
+                <p className="w-60  font-bold block truncate text-black dark:text-gray-400 uppercase text-xs">
                   {item.playtime}&nbsp;hrs
                 </p>
                 <div className="flex items-center">
-                  <p className="text-sm font-semibold my-3 lining-nums">
+                  <p className="text-sm font-semibold my-3 lining-nums text-black dark:text-white">
                     {item.released}
                   </p>
                   <div className="ml-auto flex cursor-pointer items-center">
@@ -36,7 +40,7 @@ const GamesByGenresId = ({ gameList, selectedGenresName }) => {
                       <FcRating size={15} />
                     </div>
                     &nbsp;
-                    <p className="text-sm font-semibold lining-nums">
+                    <p className="text-sm font-semibold lining-nums text-black dark:text-white">
                       {item.rating}
                     </p>
                   </div>
